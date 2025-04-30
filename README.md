@@ -1,4 +1,4 @@
-# Borrador para elproyecto de delivery tambo
+# Borrador para el proyecto de delivery tambo
 
 ![Logo de tambo](https://marketing-peru.beglobal.biz/wp-content/uploads/2024/11/logo-tambo.png)
 
