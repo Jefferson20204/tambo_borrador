@@ -143,7 +143,7 @@ Este proyecto requiere una base de datos llamada `tambo_bd`.
 
 ### 📌 Paso 1: Crear la base de datos
 
-Asegúrate de tener instalado un motor de base de datos como **MySQL**, **PostgreSQL**, o el que se utilice en este proyecto. Luego, crea la base de datos ejecutando el siguiente comando en tu cliente de base de datos:
+Asegúrate de tener instalado un motor la base de datos **MySQL**. Luego, crea la base de datos ejecutando el siguiente comando en tu cliente de base de datos:
 
 #### Ejemplo en MySQL:
 
