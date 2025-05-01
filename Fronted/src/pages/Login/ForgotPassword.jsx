@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../../store/features/common";
 import { sendResetPasswordEmailAPI } from "../../api/authentication";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo-tambo.png";
+import logo from "../../assets/img/logo-tambo2.png";
 import "../Form.css";
 
 const ResetPasswordPage = () => {

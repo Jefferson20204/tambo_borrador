@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../../store/features/common";
 import { loginAPI } from "../../api/authentication";
 import { saveToken } from "../../utils/jwt-helper";
-import logo from "../../assets/img/logo-tambo.png";
+import logo from "../../assets/img/logo-tambo2.png";
 import Divider from "../../components/common/Divider/Divider";
 import "../Form.css";
 
@@ -73,7 +73,7 @@ const Login = () => {
               name="userName"
               value={values?.userName}
               onChange={handleOnChange}
-              placeholder="Correo electrónico"
+              placeholder="Correo Electrónico"
               className="input"
               required
             />

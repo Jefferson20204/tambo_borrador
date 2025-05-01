@@ -5,7 +5,7 @@ import { setLoading } from "../../store/features/common";
 import { useDispatch } from "react-redux";
 import { registerAPI } from "../../api/authentication";
 import VerifyCode from "./VerifyCode";
-import logo from "../../assets/img/logo-tambo.png";
+import logo from "../../assets/img/logo-tambo2.png";
 import Divider from "../../components/common/Divider/Divider";
 import "../Form.css";
 
