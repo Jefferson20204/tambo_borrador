@@ -19,7 +19,7 @@
 }
 
 .nav-logo {
-  height: 46px;
+  height: 30px;
   object-fit: contain;
 }
 
@@ -27,7 +27,7 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 /* Estilos de íconos */

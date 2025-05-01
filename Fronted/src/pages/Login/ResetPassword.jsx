@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../store/features/common";
 import { resetPasswordAPI } from "../../api/authentication";
-import logo from "../../assets/img/logo-tambo.png";
+import logo from "../../assets/img/logo-tambo2.png";
 import "../Form.css";
 
 const ResetPassword = () => {
