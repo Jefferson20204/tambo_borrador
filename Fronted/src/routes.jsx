@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
 
   {
     path: "/v1/",
-    element: <AuthenticationWrapper />,
+    element: <ShopApplicationWrapper />,
     children: [
       {
         path: "login",

@@ -73,7 +73,7 @@ const Login = () => {
               name="userName"
               value={values?.userName}
               onChange={handleOnChange}
-              placeholder="Email address"
+              placeholder="Correo electrónico"
               className="input"
               required
             />
@@ -82,7 +82,7 @@ const Login = () => {
               name="password"
               value={values?.password}
               onChange={handleOnChange}
-              placeholder="Password"
+              placeholder="Contraseña"
               className="input"
               required
               autoComplete="new-password"

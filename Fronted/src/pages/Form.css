@@ -1,7 +1,7 @@
 /* Diseño del contenedor principal */
 .form-page {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 70px);
 }
 
 /* Mitad izquierda: imagen */
