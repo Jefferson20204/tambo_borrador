@@ -11,7 +11,9 @@ const Settings = () => {
   }, [navigate]);
   return (
     <div>
-      <button onClick={onLogOut}>Cerrar cesión</button>
+      <button className="btn btn-outline" onClick={onLogOut}>
+        Cerrar cesión
+      </button>
     </div>
   );
 };

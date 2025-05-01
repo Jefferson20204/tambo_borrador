@@ -30,10 +30,14 @@ const Account = () => {
           <div>
             <ul>
               <li>
-                <NavLink to={"/account-details/profile"}>Perfil</NavLink>
+                <NavLink to={"/account-details/profile"} className={"link"}>
+                  Perfil
+                </NavLink>
               </li>
               <li>
-                <NavLink to={"/account-details/settings"}>Ajustes</NavLink>
+                <NavLink to={"/account-details/settings"} className={"link"}>
+                  Ajustes
+                </NavLink>
               </li>
             </ul>
             <div>
