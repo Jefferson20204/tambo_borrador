@@ -68,7 +68,73 @@
 
 /* Carrito */
 .nav-cart {
-  display: flex; /* Agregado */
-  align-items: center; /* Alinea verticalmente el icono */
+  display: flex;
+  align-items: center;
   cursor: pointer;
+}
+
+/* Icono hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #b12a90;
+  transition: 0.4s ease;
+  border-radius: 5px;
+}
+
+/* Animación para la "X" */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .nav-right.show {
+    padding: 10px 20px;
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .nav-user span {
+    display: inline;
+  }
 }

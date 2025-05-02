@@ -87,6 +87,7 @@ const Register = () => {
                 onChange={handleOnChange}
                 placeholder="Nombre"
                 className="input"
+                autoComplete="given-name"
                 required
               />
               <input
@@ -96,15 +97,17 @@ const Register = () => {
                 onChange={handleOnChange}
                 placeholder="Apellido"
                 className="input"
+                autoComplete="family-name"
                 required
               />
               <input
-                type="text"
+                type="number"
                 name="phoneNumber"
                 value={values?.phoneNumber}
                 onChange={handleOnChange}
                 placeholder="Teléfono"
                 className="input"
+                autoComplete="tel"
                 required
               />
               <input
@@ -114,6 +117,7 @@ const Register = () => {
                 onChange={handleOnChange}
                 placeholder="Correo Electrónico"
                 className="input"
+                autoComplete="email"
                 required
               />
               <input
@@ -123,6 +127,7 @@ const Register = () => {
                 onChange={handleOnChange}
                 placeholder="Contraseña"
                 className="input"
+                autoComplete="new-password"
                 required
               />
               <div className="section-button">
