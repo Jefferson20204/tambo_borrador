@@ -22,7 +22,6 @@ const Profile = () => {
           <p>Email</p>
           <p>{userInfo?.email}</p>
         </div>
-        {/* Dorecciones del usuario */}
       </div>
     </div>
   );

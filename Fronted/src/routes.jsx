@@ -15,7 +15,7 @@ import ResetPassword from "./pages/Login/ResetPassword";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthenticationWrapper />,
+    element: <ShopApplicationWrapper />,
     children: [
       {
         index: true, // Esto hace que sea la ruta raíz
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
 
   {
     path: "/v1/",
-    element: <ShopApplicationWrapper />,
+    element: <AuthenticationWrapper />,
     children: [
       {
         path: "login",
