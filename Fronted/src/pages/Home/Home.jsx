@@ -1,11 +1,14 @@
-// src/pages/Home/Home.jsx
 import React from "react";
+import Slider from "../../components/common/Slider/MainSlider";
+import Card from "../../components/common/Card/ProductCard";
 
 const Home = () => {
   return (
-    <div className="">
+    <>
+      <Slider />
       <h1 className="">Pagina principal</h1>
-    </div>
+      <Card />
+    </>
   );
 };
 
