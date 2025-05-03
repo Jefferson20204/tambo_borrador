@@ -1,67 +1,44 @@
 import React, { useState } from "react";
+import ProductModal from "../Modal/ProductModal";
 import "./ProductCard.css";
 
-const ProductCard = ({
-  discount,
-  imageUrl,
-  description,
-  price,
-  originalPrice,
-  productName,
-}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
+const ProductCard = ({ product }) => {
+  const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-    setIsClosing(false);
-  };
-
-  const closeModal = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsModalOpen(false);
-    }, 300); // debe coincidir con la duración de la animación CSS
-  };
+  const hasDiscount = product.discountPercentage > 0;
+  const discountedPrice = hasDiscount
+    ? product.price * (1 - product.discountPercentage / 100)
+    : product.price;
 
   return (
     <>
-      <div className="product-card" onClick={openModal}>
-        {discount && <div className="discount-badge">{discount}% OFF</div>}
-        <img src={imageUrl} alt={productName} className="product-image" />
-        <div className="product-details">
-          <div className="product-description">{description}</div>
-          <div>
-            <span className="product-price">${price}</span>
-            {originalPrice && (
-              <span className="product-original-price">${originalPrice}</span>
+      <div className="product-card" onClick={() => setShowModal(true)}>
+        <div className="image-container">
+          <img
+            src={product.imageUrl || "/image/producto-defecto.jpg"}
+            alt={product.name}
+            className="product-image"
+          />
+          {hasDiscount && (
+            <div className="card-discount">-{product.discountPercentage}%</div>
+          )}
+        </div>
+        <div className="product-info">
+          <h3 className="product-title">{product.name}</h3>
+          <div className="price-section">
+            <span className="price">${discountedPrice.toFixed(2)}</span>
+            {hasDiscount && (
+              <span className="original-price">
+                ${product.price.toFixed(2)}
+              </span>
             )}
           </div>
-          <button className="add-to-cart" onClick={(e) => e.stopPropagation()}>
-            Añadir al carrito
-          </button>
+          <button className="btn btn-primary">Añadir al carrito</button>
         </div>
       </div>
 
-      {isModalOpen && (
-        <div
-          className={`modal-overlay ${
-            isClosing ? "overlay-fade-out" : "overlay-fade-in"
-          }`}
-          onClick={closeModal}
-        >
-          <div
-            className={`modal-content ${isClosing ? "fade-out" : "fade-in"}`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="modal-close" onClick={closeModal}>
-              ×
-            </button>
-            <h2>{productName}</h2>
-            <p>{description}</p>
-            <img src={imageUrl} alt={productName} className="modal-image" />
-          </div>
-        </div>
+      {showModal && (
+        <ProductModal product={product} onClose={() => setShowModal(false)} />
       )}
     </>
   );

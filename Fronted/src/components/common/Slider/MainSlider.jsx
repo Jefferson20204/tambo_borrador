@@ -5,7 +5,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
-import "./slider.css";
+import "./MainSlider.css";
 import banner1Desktop from "../../../assets/img/Slider/banner-01-desktop.webp";
 import banner1Mobile from "../../../assets/img/Slider/banner-01-mobile.webp";
 import banner2Desktop from "../../../assets/img/Slider/banner-02-desktop.webp";
@@ -93,7 +93,7 @@ export default function MainSlider() {
     <div className="main-slider-container">
       <Swiper
         modules={[Autoplay, Navigation]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
         loop={true}
         navigation={{
           prevEl: prevRef.current,

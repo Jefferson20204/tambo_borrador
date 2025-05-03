@@ -1,182 +1,98 @@
 .product-card {
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 0px solid #ddd;
+  border-radius: 20px;
   overflow: hidden;
-  position: relative;
   cursor: pointer;
-  font-family: sans-serif;
-  transition: box-shadow 0.3s;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* transition: box-shadow 0.3s ease; */
+  width: 220px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.discount-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: red;
-  color: white;
-  padding: 4px 8px;
-  font-size: 14px;
-  border-radius: 4px;
-  z-index: 1;
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
 .product-image {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
 }
 
-.product-details {
-  padding: 10px;
+.card-discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--tertiary-color);
+  color: black;
+  padding: 4px 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 20px;
 }
 
-.product-description {
-  font-size: 14px;
+.product-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 1em;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
-.product-price {
-  font-size: 16px;
+.product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Máximo 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.8em; /* Ajusta según el tamaño de fuente */
+  line-height: 1.4em; /* Asegura 2 líneas visibles */
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 0.87em;
   font-weight: bold;
   color: green;
 }
 
-.product-original-price {
-  font-size: 14px;
+.original-price {
   text-decoration: line-through;
   color: #888;
-  margin-left: 8px;
+  font-size: 0.87em;
 }
 
-.add-to-cart {
-  display: block;
-  width: 100%;
-  margin-top: 10px;
-  padding: 8px;
-  background-color: #007bff;
+.add-button {
+  padding: 6px 10px;
+  background-color: var(--main-color);
+  border: none;
   color: white;
-  border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
+  margin-top: auto;
+  align-self: start;
 }
 
-/* MODAL */
-.modal-overlay {
-  display: flex;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  max-width: 90%;
-  position: relative;
-  transform: scale(0.95);
-  animation: modalShow 0.3s ease-out forwards;
-}
-
-.modal-image {
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
-/* Botón cerrar "X" */
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: #888;
-  cursor: pointer;
-}
-
-.modal-close:hover {
-  color: #000;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes modalShow {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Nueva animación para cerrar */
-@keyframes modalHide {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-.fade-in {
-  animation: modalShow 0.3s ease-out forwards;
-}
-
-.fade-out {
-  animation: modalHide 0.3s ease-in forwards;
-}
-
-@keyframes overlayShow {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes overlayHide {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.overlay-fade-in {
-  animation: overlayShow 0.3s ease-out forwards;
-}
-
-.overlay-fade-out {
-  animation: overlayHide 0.3s ease-in forwards;
+.add-button:hover {
+  background-color: var(--shadowColor);
 }
