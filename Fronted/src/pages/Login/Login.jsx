@@ -75,6 +75,7 @@ const Login = () => {
               onChange={handleOnChange}
               placeholder="Correo Electrónico"
               className="input"
+              autoComplete="username"
               required
             />
             <input
@@ -84,8 +85,8 @@ const Login = () => {
               onChange={handleOnChange}
               placeholder="Contraseña"
               className="input"
-              required
               autoComplete="new-password"
+              required
             />
 
             <div className="section-button">

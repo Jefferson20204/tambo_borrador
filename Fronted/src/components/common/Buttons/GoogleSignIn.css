@@ -1,10 +1,13 @@
 .btn-google-signin {
   display: flex;
+  padding: 12px;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
   background-color: white;
+  border-radius: 20px;
   border: 1px solid #ccc;
   transition: background-color 0.3s;
 }
@@ -14,13 +17,14 @@
 }
 
 .google-signin-logo {
-  width: 24px;
-  height: 24px;
+  width: 15px;
+  height: 15px;
 }
 
 .google-signin-text {
-  margin: 0; /* Elimina el margin del <p> */
+  margin: 0;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
   color: #555;
 }
