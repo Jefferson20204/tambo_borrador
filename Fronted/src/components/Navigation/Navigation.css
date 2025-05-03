@@ -104,6 +104,14 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Versión para tablet */
+@media (max-width: 1024px) {
+  .navigation {
+    padding: 20px;
+  }
+}
+
+/* Versión para móviles */
 @media (max-width: 768px) {
   .navigation {
     flex-direction: row;

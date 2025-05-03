@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "../../components/common/Slider/MainSlider";
-import ProductCard from "../../components/common/Card/ProductCard";
+import ProductSection from "../../components/common/ProductSection/ProductSection"; // asegúrate de que esta ruta sea correcta
 
 const productList = [
   {
@@ -39,18 +39,86 @@ const productList = [
     discountPercentage: 18,
     description: "",
   },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
+  {
+    id: 4,
+    name: "Pack (4 Conserva Trozos De Atún Campomar x 150 Gr)",
+    imageUrl:
+      "https://tofuu.getjusto.com/orioneat-local/resized2/654TTG4hdmSRH8bZt-2400-x.webp",
+    price: 24.4,
+    discountPercentage: 18,
+    description: "",
+  },
 ];
+
+const productCategories = ["cervezas", "licores", "comidas", "descuentos"];
 
 const Home = () => {
   return (
     <>
       <Slider />
-      <h1 className="">Promociones</h1>
-      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-        {productList.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {productCategories.map((category) => (
+        <div key={category}>
+          <ProductSection
+            title={category}
+            products={productList} // Aquí puedes filtrar por categoría y limitar a 8
+            onSeeMore={() => (window.location.href = `/productos/${category}`)}
+          />
+        </div>
+      ))}
     </>
   );
 };
