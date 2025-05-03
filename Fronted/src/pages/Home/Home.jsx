@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "../../components/common/Slider/MainSlider";
-import ProductSection from "../../components/common/ProductSection/ProductSection"; // asegúrate de que esta ruta sea correcta
+import ProductSection from "../../components/common/ProductSection/ProductSection";
 
 const productList = [
   {
@@ -114,7 +114,7 @@ const Home = () => {
         <div key={category}>
           <ProductSection
             title={category}
-            products={productList} // Aquí puedes filtrar por categoría y limitar a 8
+            products={productList}
             onSeeMore={() => (window.location.href = `/productos/${category}`)}
           />
         </div>
