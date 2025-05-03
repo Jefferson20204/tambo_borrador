@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ProductModal.css";
+import QuantityInput from "../Quantity/QuantityInput";
 
 const ProductModal = ({ product, onClose }) => {
   const [isClosing, setIsClosing] = useState(false);
@@ -77,14 +78,13 @@ const ProductModal = ({ product, onClose }) => {
         </div>
 
         <div className="bottom-bar">
-          <label htmlFor="quantity">Cantidad:</label>
-          <input
-            id="quantity"
-            type="number"
-            min="1"
+          <QuantityInput
             value={quantity}
-            onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
+            onChange={setQuantity}
+            min={1}
+            max={product.stock || 10} // Usa la propiedad correcta que tengas como stock
           />
+
           <button>Agregar - ${subtotal}</button>
         </div>
       </div>

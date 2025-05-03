@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "../../components/common/Slider/MainSlider";
-import ProductSection from "../../components/common/ProductSection/ProductSection";
+import ProductSection from "../../components/common/Section/ProductSection";
+import QuantityInput from "../../components/common/Quantity/QuantityInput";
 
 const productList = [
   {

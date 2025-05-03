@@ -1,0 +1,41 @@
+.quantity-input {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 27px var(--shadowColor);
+  background-color: white;
+  width: fit-content;
+}
+
+.quantity-btn {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+  background-color: var(--shadowColor);
+}
+
+.quantity-field {
+  width: 40px;
+  height: 32px;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  line-height: 32px; /* hace que el texto se centre verticalmente */
+  padding: 0;
+}
