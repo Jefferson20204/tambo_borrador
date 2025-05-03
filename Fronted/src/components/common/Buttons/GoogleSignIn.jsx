@@ -9,7 +9,7 @@ const GoogleSignIn = () => {
   }, []);
 
   return (
-    <button onClick={handleClick} className="btn btn-google-signin">
+    <button onClick={handleClick} className="btn-google-signin">
       <img src={GoogleLogo} alt="google-icon" className="google-signin-logo" />
       <a className="google-signin-text">Continuar con Google</a>
     </button>
