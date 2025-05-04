@@ -1,10 +1,13 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { setLoading } from "../../store/features/common";
-import { sendResetPasswordEmailAPI } from "../../api/authentication";
+import { setLoading } from "../../../store/features/common";
+import { sendResetPasswordEmailAPI } from "../../../api/authentication";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo-tambo2.png";
-import "../Form.css";
+import Button from "../../../components/common/Buttons/Button";
+import AuthFormWrapper from "../AuthFormWrapper";
+import Input from "../../../components/common/Input/Input";
+import Message from "../../../components/common/Message/Message";
+import "../AuthStyles.css";
 
 const ResetPasswordPage = () => {
   const [email, setEmail] = useState("");
@@ -65,15 +68,12 @@ const ResetPasswordPage = () => {
   };
 
   return (
-    <div className="form-page">
-      <div className="form-image bg-login"></div>
-      <div className="form-container">
-        <img src={logo} alt="Logo" className="form-logo" />
-        <h1 className="form-title">Restablecer Contraseña</h1>
-        {message && <div className="message success">{message}</div>}
-        {apiError && <div className="message error">{apiError}</div>}
+    <>
+      <AuthFormWrapper title="Restablecer contraseña">
+        {message && <Message type="success" message={message} />}
+        {apiError && <Message type="error" message={apiError.message} />}
         <form onSubmit={handleSubmit} className="form">
-          <input
+          <Input
             type="email"
             name="email"
             value={email}
@@ -84,22 +84,19 @@ const ResetPasswordPage = () => {
           />
 
           <div className="section-button">
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={buttonDisabled}
-            >
+            <Button type="submit" variant="primary" disabled={buttonDisabled}>
               {buttonDisabled
                 ? `Vuelve a enviar dentro de ${formatTime(secondsLeft)}`
                 : "Enviar correo de recuperación"}
-            </button>
-            <Link to="/v1/login" className="btn btn-outline">
-              Volver al login
+            </Button>
+
+            <Link to="/v1/login" className="btn-link-wrapper">
+              <Button variant="outline">Volver al login</Button>
             </Link>
           </div>
         </form>
-      </div>
-    </div>
+      </AuthFormWrapper>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./ProductModal.css";
 import QuantityInput from "../Quantity/QuantityInput";
+import "./ProductModal.css";
 
 const ProductModal = ({ product, onClose }) => {
   const [isClosing, setIsClosing] = useState(false);

@@ -1,9 +1,12 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLoading } from "../../store/features/common";
-import { verifyAPI } from "../../api/authentication";
-import "../Form.css";
+import { setLoading } from "../../../store/features/common";
+import { verifyAPI } from "../../../api/authentication";
+import Button from "../../../components/common/Buttons/Button";
+import Input from "../../../components/common/Input/Input";
+import Message from "../../../components/common/Message/Message";
+import "../AuthStyles.css";
 
 const VerifyCode = ({ email }) => {
   const [values, setValues] = useState({
@@ -50,7 +53,7 @@ const VerifyCode = ({ email }) => {
 
   return (
     <>
-      {error && <p className="message error">{error}</p>}
+      {error && <Message type="error" message={error} />}
       {message ? (
         <div className="form">
           <p>{message}</p>
@@ -63,7 +66,7 @@ const VerifyCode = ({ email }) => {
               electrónico para verificar su cuenta.
             </p>
 
-            <input
+            <Input
               type="text"
               name="code"
               value={values.code}
@@ -73,10 +76,11 @@ const VerifyCode = ({ email }) => {
               className="input"
               required
             />
+
             <div className="section-button">
-              <button type="submit" className="btn btn-primary">
+              <Button type="submit" variant="primary">
                 Verificar
-              </button>
+              </Button>
             </div>
           </form>
         </>

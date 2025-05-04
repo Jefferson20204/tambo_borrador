@@ -36,6 +36,6 @@
   font-weight: bold;
   font-family: "Inter", sans-serif;
   outline: none;
-  line-height: 32px; /* hace que el texto se centre verticalmente */
+  line-height: 32px;
   padding: 0;
 }

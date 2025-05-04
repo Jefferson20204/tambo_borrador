@@ -1,18 +1,17 @@
-import React, { useCallback } from "react";
-import GoogleLogo from "../../../assets/img/Google.png";
+import React from "react";
+import Button from "./Button";
+import GoogleLogo from "../../../assets/img/Icons/Google.png";
 import { API_BASE_URL } from "../../../api/constant";
-import "./GoogleSignIn.css";
 
 const GoogleSignIn = () => {
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     window.location.href = API_BASE_URL + "/oauth2/authorization/google";
-  }, []);
+  };
 
   return (
-    <button onClick={handleClick} className="btn-google-signin">
-      <img src={GoogleLogo} alt="google-icon" className="google-signin-logo" />
-      <a className="google-signin-text">Continuar con Google</a>
-    </button>
+    <Button onClick={handleClick} variant="google" icon={GoogleLogo}>
+      Continuar con Google
+    </Button>
   );
 };
 

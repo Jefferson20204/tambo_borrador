@@ -17,21 +17,19 @@
   display: flex;
   align-items: center;
 }
-
 .nav-logo {
   height: 30px;
   object-fit: contain;
 }
 
-/* Contenedor de los iconos a la derecha */
+/* Menú en desktop: horizontal, siempre visible */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 20px;
-  /* transition: max-height 0.4s ease, opacity 0.3s ease; */
 }
 
-/* Estilos de íconos */
+/* Iconos */
 .nav-icon {
   height: 30px;
   width: 30px;
@@ -39,8 +37,9 @@
   cursor: pointer;
 }
 
-/* Contenedor de "Usuario + texto" */
-.nav-user {
+/* Usuario y carrito */
+.nav-user,
+.nav-cart {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -49,79 +48,62 @@
   color: #333;
   transition: color 0.3s;
 }
-
-/* Estilo específico para el icono de usuario */
-.nav-user img {
-  border: 3px solid var(--main-color);
-  border-radius: 40%; /* Redondo */
-  padding: 3px;
-  height: 30px; /* Un poco más grande para destacar */
-  width: 30px;
-}
-
 .nav-user span {
   color: var(--main-color);
 }
-
 .nav-user:hover {
   color: var(--main-color);
 }
 
-/* Carrito */
-.nav-cart {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-/* Icono hamburguesa */
+/* Hamburger (solo móvil) */
 .hamburger {
-  display: none;
+  display: none; /* oculto en desktop */
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  cursor: pointer;
   z-index: 1000;
 }
-
 .hamburger span {
   height: 3px;
   width: 25px;
   background: #b12a90;
-  transition: 0.4s ease;
   border-radius: 5px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
-
-/* Animación para la "X" */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Versión para tablet */
+/* Tablet */
 @media (max-width: 1024px) {
   .navigation {
     padding: 20px;
   }
 }
 
-/* Versión para móviles */
+/* Móvil */
 @media (max-width: 768px) {
   .navigation {
-    flex-direction: row;
     padding: 15px 20px;
   }
 
+  /* Mostrar hamburger */
   .hamburger {
     display: flex;
   }
 
+  /* Menú oculto inicialmente, animado con scaleY */
   .nav-right {
     position: absolute;
     top: 70px;
@@ -131,15 +113,15 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 20px;
-    max-height: 0;
-    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
     overflow: hidden;
   }
 
+  /* Cuando añadimos .show, escalamos en Y para desplegar */
   .nav-right.show {
-    padding: 10px 20px;
-    max-height: 300px;
-    opacity: 1;
+    transform: scaleY(1);
   }
 
   .nav-user span {

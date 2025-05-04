@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "../../store/features/common";
-import { fetchUserDetails } from "../../api/userInfo";
-import { loadUserInfo, selectUserInfo } from "../../store/features/user";
+import { setLoading } from "../../../store/features/common";
+import { fetchUserDetails } from "../../../api/userInfo";
+import { loadUserInfo, selectUserInfo } from "../../../store/features/user";
 
 const Account = () => {
   const dispatch = useDispatch();

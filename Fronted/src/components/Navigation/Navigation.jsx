@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../assets/img/logo-tambo2.png";
+import Logo from "../../assets/img/Logo/logo-tambo2.png";
 import { isTokenValid } from "../../utils/jwt-helper";
 import "./Navigation.css";
 
@@ -29,14 +29,15 @@ const Navigation = ({ variant = "default" }) => {
         </a>
       </div>
 
-      <div
+      <button
         className={`hamburger ${menuOpen ? "open" : ""}`}
+        aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <span />
+        <span />
+        <span />
+      </button>
 
       <div className={`nav-right ${menuOpen ? "show" : ""}`}>
         {variant === "default" && (
