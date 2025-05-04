@@ -5,7 +5,6 @@ import Spinner from "../components/common/Spinner/Spinner";
 import { useSelector } from "react-redux";
 import Footer from "./Footer/Footer";
 
-
 const ShopApplicationWrapper = () => {
   const isLoading = useSelector((state) => state.commonState.loading);
   const loadingMessage = useSelector(
@@ -15,7 +14,7 @@ const ShopApplicationWrapper = () => {
     <div>
       <Navigation />
       <Outlet />
-      <Footer/>
+      <Footer />
       {isLoading && <Spinner text={loadingMessage || "Cargando..."} />}
     </div>
   );
