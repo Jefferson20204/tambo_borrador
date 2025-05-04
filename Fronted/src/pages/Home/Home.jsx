@@ -105,7 +105,7 @@ const productList = [
   },
 ];
 
-const productCategories = ["cervezas", "licores", "comidas", "descuentos"];
+const productCategories = ["Cervezas", "Licores", "Comidas", "Descuentos"];
 
 const Home = () => {
   return (
