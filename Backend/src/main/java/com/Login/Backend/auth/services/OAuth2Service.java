@@ -2,6 +2,7 @@ package com.Login.Backend.auth.services;
 
 import com.Login.Backend.auth.entities.User;
 import com.Login.Backend.auth.repositories.UserDetailRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
@@ -35,4 +36,5 @@ public class OAuth2Service {
                 .build();
         return userDetailRepository.save(user);
     }
+
 }

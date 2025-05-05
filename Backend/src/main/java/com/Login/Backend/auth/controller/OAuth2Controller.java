@@ -36,7 +36,7 @@ public class OAuth2Controller {
         // Buscar un usuario existente por email
         User user = oAuth2Service.getUser(userName);
         // Crear un nuevo usuario si no existe
-        if (null == user) {
+        if (user == null) {
             user = oAuth2Service.createUser(oAuth2User, "google");
         }
 

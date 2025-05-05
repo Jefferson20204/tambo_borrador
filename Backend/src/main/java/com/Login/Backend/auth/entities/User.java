@@ -51,6 +51,7 @@ public class User implements UserDetails {
 
     private String verificationCode;
 
+    @Builder.Default
     private boolean enabled = false;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
