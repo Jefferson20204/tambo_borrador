@@ -1,9 +1,10 @@
 import React from "react";
-import Navigation from "../components/Navigation/Header/Navigation";
 import { Outlet } from "react-router-dom";
-import Spinner from "../components/common/Spinner/Spinner";
 import { useSelector } from "react-redux";
-import Footer from "./Footer/Footer";
+import Navigation from "../components/Navigation/Header/Navigation";
+import Footer from "../components/Navigation/Footer/Footer";
+
+import Spinner from "../components/common/Spinner/Spinner";
 
 const ShopApplicationWrapper = () => {
   const isLoading = useSelector((state) => state.commonState.loading);
