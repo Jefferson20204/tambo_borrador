@@ -1,7 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL, getHeaders } from "./constant";
 
-// asda
 export const fetchUserDetails = async () => {
   const url = API_BASE_URL + "/api/user/profile";
   try {
