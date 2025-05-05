@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../assets/img/Logo/logo-tambo2.png";
-import { isTokenValid } from "../../utils/jwt-helper";
+import Logo from "../../../assets/img/Logo/logo-tambo2.png";
+import { isTokenValid } from "../../../utils/jwt-helper";
 import "./Navigation.css";
 
 const Navigation = ({ variant = "default" }) => {

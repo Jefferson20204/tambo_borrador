@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../components/Navigation/Navigation";
+import Navigation from "../components/Navigation/Header/Navigation";
 import { Outlet } from "react-router-dom";
 import Spinner from "../components/common/Spinner/Spinner";
 import { useSelector } from "react-redux";
