@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductModal from "../Modal/ProductModal";
+import Button from "../Buttons/Button";
 import "./ProductCard.css";
 
 const ProductCard = ({ product }) => {
@@ -33,7 +34,7 @@ const ProductCard = ({ product }) => {
               </span>
             )}
           </div>
-          <button className="btn btn-primary">Añadir al carrito</button>
+          <Button variant="primary">Añadir al carrito</Button>
         </div>
       </div>
 

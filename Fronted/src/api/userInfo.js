@@ -16,9 +16,6 @@ export const fetchUserDetails = async () => {
       headers: getHeaders(),
     });
 
-    // Imprime la respuesta en consola (útil para depuración)
-    console.log(response);
-
     // Retorna los datos obtenidos del backend
     return response?.data;
   } catch (err) {
