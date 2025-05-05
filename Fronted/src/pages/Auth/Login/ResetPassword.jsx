@@ -1,10 +1,13 @@
 import React, { useCallback, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLoading } from "../../store/features/common";
-import { resetPasswordAPI } from "../../api/authentication";
-import logo from "../../assets/img/logo-tambo2.png";
-import "../Form.css";
+import { setLoading } from "../../../store/features/common";
+import { resetPasswordAPI } from "../../../api/authentication";
+import Button from "../../../components/common/Buttons/Button";
+import AuthFormWrapper from "../AuthFormWrapper";
+import Input from "../../../components/common/Input/Input";
+import Message from "../../../components/common/Message/Message";
+import "../AuthStyles.css";
 
 const ResetPassword = () => {
   const [params] = useSearchParams();
@@ -39,17 +42,14 @@ const ResetPassword = () => {
   );
 
   return (
-    <div className="form-page">
-      <div className="form-image bg-login"></div>
-      <div className="form-container">
-        <img src={logo} alt="Logo" className="form-logo" />
-        <h1 className="form-title">Restablecer Contraseña</h1>
-        {error && <p className="message error">{error}</p>}
+    <>
+      <AuthFormWrapper title="Restablecer contraseña">
+        {error && <Message type="error" message={error} />}
         {message ? (
-          <p className="success">{message}</p>
+          <Message type="success" message={message} />
         ) : (
           <form onSubmit={onSubmit} className="form">
-            <input
+            <Input
               type="password"
               placeholder="Nueva contraseña"
               value={password}
@@ -57,15 +57,16 @@ const ResetPassword = () => {
               className="input"
               required
             />
+
             <div className="section-button">
-              <button type="submit" className="btn btn-primary">
+              <Button type="submit" variant="primary">
                 Cambiar contraseña
-              </button>
+              </Button>
             </div>
           </form>
         )}
-      </div>
-    </div>
+      </AuthFormWrapper>
+    </>
   );
 };
 

@@ -1,7 +1,11 @@
 import axios from "axios";
 import { API_BASE_URL } from "./constant";
 
-// Funcion para iniciar sesion
+/**
+ * Iniciar sesión del usuario
+ * @param {Object} body - Objeto con email y password
+ * @returns {Object} - Datos de la respuesta (token, usuario, etc.)
+ */
 export const loginAPI = async (body) => {
   const url = API_BASE_URL + "/api/auth/login";
   try {
@@ -11,15 +15,21 @@ export const loginAPI = async (body) => {
     });
     return response?.data;
   } catch (err) {
+    // Si el backend devuelve un mensaje de error, lo lanzamos
     if (err.response && err.response.data) {
-      throw err.response.data; // Devuelve lo que Spring te envió
+      throw err.response.data;
     } else {
-      throw err; // O el error original si no hay respuesta
+      // Sino, lanzamos el error general
+      throw err;
     }
   }
 };
 
-// Funcion para registrar un nuevo usuario
+/**
+ * Registrar un nuevo usuario
+ * @param {Object} body - Objeto con datos de registro (nombre, email, password, etc.)
+ * @returns {Object} - Datos de la respuesta
+ */
 export const registerAPI = async (body) => {
   const url = API_BASE_URL + "/api/auth/register";
   try {
@@ -37,7 +47,11 @@ export const registerAPI = async (body) => {
   }
 };
 
-// Funcion para verificar el email
+/**
+ * Verificar código enviado al correo electrónico (registro o recuperación)
+ * @param {Object} body - Objeto con email y código de verificación
+ * @returns {Object} - Resultado de la verificación
+ */
 export const verifyAPI = async (body) => {
   const url = API_BASE_URL + "/api/auth/verify";
   try {
@@ -55,7 +69,11 @@ export const verifyAPI = async (body) => {
   }
 };
 
-// Función para enviar el correo de restablecimiento de contraseña
+/**
+ * Enviar correo para restablecer contraseña
+ * @param {string} email - Email del usuario que olvidó su contraseña
+ * @returns {Object} - Mensaje de éxito o error
+ */
 export const sendResetPasswordEmailAPI = async (email) => {
   const url = API_BASE_URL + "/api/auth/forgot-password";
   try {
@@ -73,7 +91,12 @@ export const sendResetPasswordEmailAPI = async (email) => {
   }
 };
 
-// Función para resetear la contraseña
+/**
+ * Restablecer contraseña con token recibido por correo
+ * @param {string} token - Token de verificación recibido por email
+ * @param {string} newPassword - Nueva contraseña elegida por el usuario
+ * @returns {Object} - Resultado del restablecimiento
+ */
 export const resetPasswordAPI = async (token, newPassword) => {
   const url = API_BASE_URL + "/api/auth/reset-password";
   try {
