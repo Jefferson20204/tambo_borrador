@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../assets/img/logo-tambo2.png";
+import Logo from "../../assets/img/Logo/logo-tambo2.png";
 import { isTokenValid } from "../../utils/jwt-helper";
 import "./Navigation.css";
 
@@ -21,29 +21,35 @@ const Navigation = ({ variant = "default" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handleNavigate = (path) => {
+    navigate(path);
+    setMenuOpen(false); // Cierra el menú al navegar
+  };
+
   return (
     <nav className="navigation" ref={navRef}>
       <div className="nav-left">
-        <a href="/">
+        <a href="/" onClick={() => setMenuOpen(false)}>
           <img src={Logo} alt="Logo" className="nav-logo" />
         </a>
       </div>
 
-      <div
+      <button
         className={`hamburger ${menuOpen ? "open" : ""}`}
+        aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <span />
+        <span />
+        <span />
+      </button>
 
       <div className={`nav-right ${menuOpen ? "show" : ""}`}>
         {variant === "default" && (
           <div
             className="nav-user"
             onClick={() =>
-              navigate(isLoggedIn ? "/account-details/" : "/v1/login")
+              handleNavigate(isLoggedIn ? "/account-details/" : "/v1/login")
             }
           >
             <svg
@@ -91,7 +97,7 @@ const Navigation = ({ variant = "default" }) => {
             {!isLoggedIn && <span>Iniciar sesión</span>}
           </div>
         )}
-        <div className="nav-cart" onClick={() => navigate("")}>
+        <div className="nav-cart" onClick={() => handleNavigate("/cart")}>
           <svg
             viewBox="0 0 24 24"
             fill="none"

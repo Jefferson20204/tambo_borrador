@@ -1,5 +1,6 @@
 .product-section {
-  padding: 20px 120px;
+  padding: 20px 20px;
+  margin: 0px 100px;
 }
 
 .section-header {
@@ -27,7 +28,7 @@
   gap: 20px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 .product-carousel::-webkit-scrollbar {
@@ -37,12 +38,6 @@
 .product-carousel {
   -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-.product-card {
-  min-width: 220px;
-  flex-shrink: 0;
-  scroll-snap-align: start; /* Detener el scroll en cada card */
 }
 
 /* Flechas */
@@ -70,13 +65,15 @@
 /* Versión para tablet */
 @media (max-width: 1024px) {
   .product-section {
-    padding: 20px;
+    padding: 20px 20px;
+    margin: 0px 0px;
   }
 }
 
 /* Versión para móviles */
 @media (max-width: 768px) {
   .product-section {
-    padding: 20px;
+    padding: 20px 20px;
+    margin: 0px 0px;
   }
 }

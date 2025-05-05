@@ -1,13 +1,16 @@
 import React, { useCallback, useState } from "react";
-import GoogleSignIn from "../../components/common/Buttons/GoogleSignIn";
+import GoogleSignIn from "../../../components/common/Buttons/GoogleSignIn";
 import { Link } from "react-router-dom";
-import { setLoading } from "../../store/features/common";
+import { setLoading } from "../../../store/features/common";
 import { useDispatch } from "react-redux";
-import { registerAPI } from "../../api/authentication";
+import { registerAPI } from "../../../api/authentication";
 import VerifyCode from "./VerifyCode";
-import logo from "../../assets/img/logo-tambo2.png";
-import Divider from "../../components/common/Divider/Divider";
-import "../Form.css";
+import Divider from "../../../components/common/Divider/Divider";
+import Button from "../../../components/common/Buttons/Button";
+import AuthFormWrapper from "../AuthFormWrapper";
+import Input from "../../../components/common/Input/Input";
+import Message from "../../../components/common/Message/Message";
+import "../AuthStyles.css";
 
 const Register = () => {
   const [values, setValues] = useState({
@@ -68,19 +71,16 @@ const Register = () => {
   }, []);
 
   return (
-    <div className="form-page">
-      <div className="form-image bg-register"></div>
-      <div className="form-container">
-        <img src={logo} alt="Logo" className="form-logo" />
-        <h1 className="form-title">Registro</h1>
+    <>
+      <AuthFormWrapper title="Registro">
         {apiError.message && (
-          <div className="message error">{apiError.message}</div>
+          <Message type="error" message={apiError.message} />
         )}
         {!enableVerify ? (
           <>
             {" "}
             <form onSubmit={onSubmit} className="form">
-              <input
+              <Input
                 type="text"
                 name="firstName"
                 value={values?.firstName}
@@ -90,7 +90,7 @@ const Register = () => {
                 autoComplete="given-name"
                 required
               />
-              <input
+              <Input
                 type="text"
                 name="lastName"
                 value={values?.lastName}
@@ -100,7 +100,7 @@ const Register = () => {
                 autoComplete="family-name"
                 required
               />
-              <input
+              <Input
                 type="number"
                 name="phoneNumber"
                 value={values?.phoneNumber}
@@ -110,7 +110,7 @@ const Register = () => {
                 autoComplete="tel"
                 required
               />
-              <input
+              <Input
                 type="email"
                 name="email"
                 value={values?.email}
@@ -120,7 +120,7 @@ const Register = () => {
                 autoComplete="email"
                 required
               />
-              <input
+              <Input
                 type="password"
                 name="password"
                 value={values?.password}
@@ -130,14 +130,20 @@ const Register = () => {
                 autoComplete="new-password"
                 required
               />
+
               <div className="section-button">
-                <button type="submit" className="btn btn-primary">
+                <Button type="submit" variant="primary">
                   Registrarse
-                </button>
-                <Link to="/v1/login" className="btn btn-outline">
-                  ¿Ya tienes cuenta? Inicia sesión
+                </Button>
+
+                <Link to="/v1/login" className="btn-link-wrapper">
+                  <Button variant="outline">
+                    ¿Ya tienes cuenta? Inicia sesión
+                  </Button>
                 </Link>
+
                 <Divider text="o" />
+
                 <GoogleSignIn />
               </div>
             </form>
@@ -145,8 +151,8 @@ const Register = () => {
         ) : (
           <VerifyCode email={values.email} />
         )}
-      </div>
-    </div>
+      </AuthFormWrapper>
+    </>
   );
 };
 
