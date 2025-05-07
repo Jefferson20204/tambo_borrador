@@ -1,9 +1,18 @@
 import React from "react";
 import logo from "../../../assets/img/Logo/logo-tambo2.png";
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer-container">
+      {/*logo y etiqueta de tambo*/}
+      <div className="footer-section">
+        <img src={logo} alt="Logo Tambo" className="logo" />
+
+        <p className="footer-copy">
+          &copy; {new Date().getFullYear()} Tambo Express Los Olivos
+        </p>
+      </div>
       {/*Primera columna "Recursos"*/}
       <div className="footer-section">
         <h5 className="footer-title">Recursos</h5>
@@ -87,13 +96,6 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-      </div>
-      {/*logo y etiqueta de tambo*/}
-      <div className="footer-section">
-        <p className="footer-copy">
-          &copy; {new Date().getFullYear()} Tambo Express Los Olivos
-        </p>
-        <img src={logo} alt="Logo Tambo" className="logo" />
       </div>
     </footer>
   );
